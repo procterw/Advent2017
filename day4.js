@@ -25,27 +25,8 @@ function p1(input) {
 function p2() {
   return input.map(row => {
     const words = row.split(' ');
-    return isValidPassphrase(words);
+    return _.uniq(words.map(sortWord)).length === words.length;
   }).filter(Boolean).length;
-}
-
-function isValidPassphrase(words) {
-  const validWords = [];
-  for (let i=0; i<words.length; i++) {
-    const w1 = words[i];
-    const anagramCount = validWords
-      .map(w2 => isAnagram(w1, w2))
-      .filter(Boolean)
-      .length;
-    if (anagramCount > 0) return false;
-    validWords.push(w1);
-  }
-  return true;
-}
-
-function isAnagram(w1, w2) {
-  if (w1.length !== w2.length) return;
-  return sortWord(w2) === sortWord(w1);
 }
 
 function sortWord(w) {
