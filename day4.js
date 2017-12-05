@@ -22,7 +22,7 @@ function p1(input) {
 // PART 2
 // #$&*#@^$&#*@($^(*(#*))) //
 
-function p2() {
+function p2(input) {
   return input.map(row => {
     const words = row.split(' ');
     return _.uniq(words.map(sortWord)).length === words.length;
