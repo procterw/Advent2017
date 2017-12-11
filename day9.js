@@ -6,7 +6,6 @@ const fs = require('fs');
 const input = fs.readFileSync('./day9-input.txt', 'utf8');
 
 const cl = console.log;
-const json = obj => JSON.stringify(obj, null, 2);
 
 cl( 'PART 1: ' + p1(input));
 cl( 'PART 2: ' + p2(input));
